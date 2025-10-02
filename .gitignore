@@ -1,4 +1,27 @@
-workshop_solution.cpp
-# all executables
+# Ignore Visual Studio temporary files and user-specific settings
+*.suo
+*.user
+*.vcxproj.user
+.vs/
+
+# Ignore build output directories
+# This single line covers the 'x64' folder and everything inside it
+[xX]64/
+
+# You can also be more specific if you prefer
+# [Dd]ebug/
+# [Rr]elease/
+
+# Ignore build artifacts and intermediate files
+*.obj
+*.pdb
 *.exe
-plinko_workshop
+*.lib
+*.ilk
+*.log
+*.tlog
+*.idb
+
+# Ignore OS-generated files
+.DS_Store
+Thumbs.db
