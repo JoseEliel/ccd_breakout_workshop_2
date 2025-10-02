@@ -1,0 +1,4 @@
+workshop_solution.cpp
+# all executables
+*.exe
+plinko_workshop
