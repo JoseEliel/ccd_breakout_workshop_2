@@ -16,7 +16,7 @@
 *.obj
 *.pdb
 *.exe
-*.lib
+
 *.ilk
 *.log
 *.tlog
