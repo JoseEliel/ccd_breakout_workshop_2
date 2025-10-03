@@ -21,7 +21,6 @@ RayHit FindEarliestCollision(
     // Call it here to get a vector of candidate indices.
     //
     // std::vector<size_t> candidates = ... your function call here ...
-	std::vector<size_t> candidates = GetCollisionCandidates(ballPos, ballVel, ballRadius, allPegs, dt);
 
 
     // --- PUZZLE PIECE 2: The Narrow Phase ---
@@ -36,13 +35,6 @@ RayHit FindEarliestCollision(
     // for (size_t idx : candidates) {
     //     ... your logic here ...
     // }
-	for (size_t idx : candidates) {
-		const Peg& peg = allPegs[idx];
-		RayHit hit = IntersectMovingCirclePeg(ballPos, ballVel, ballRadius, peg, dt);
-		if (hit.hit && hit.t < best.t) {
-			best = hit;
-		}
-	}
 
     // After checking all candidates, `best` will either be the initial sentinel value (no hit)
     // or it will contain the information about the very first collision that will happen this frame.
