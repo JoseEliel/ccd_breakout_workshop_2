@@ -1,12 +1,6 @@
-Here is a pedagogical `README.md` designed to be distributed alongside the code. It acts as a guide, a cheat sheet, and a mission briefing all in one.
 
------
+# Workshop: The Cosmic Collector
 
-# 🚀 Workshop: The Cosmic Collector
-
-**Lecture 1: Discrete Collision Detection**
-
-## 📜 The Mission
 
 You are the captain of the **Star Scavenger**, a square industrial hauler designed to pick up cargo in deep space. However, your ship's sensors are offline.
 
@@ -17,45 +11,24 @@ You are the captain of the **Star Scavenger**, a square industrial hauler design
 
 -----
 
-## 📂 The Files
-
   * `main.cpp` - The game engine. **You only need to edit the specific functions marked with `TODO`.**
 
 -----
 
-## 🛠️ Task 1: The Cargo (AABB vs AABB)
+## Task 1: The Cargo (AABB vs AABB)
 
 **Goal:** Implement `Student_CheckCollisionAABB`.
 When your ship (Blue Square) overlaps with a Cargo Crate (Green Square), the function should return `true`.
 
-### 🧠 The Logic: "The Separating Axis Test"
+### The Logic: "The Separating Axis Test"
 
 Instead of asking "Are we touching?", ask **"Are we definitely separated?"**
 
 Two non-rotated rectangles are **NOT** colliding if there is a gap between them on the X-axis **OR** a gap on the Y-axis.
 
-```text
-      [Box A]
-                 <--- GAP --->    [Box B]
-```
-
-**The Code Logic:**
-
-1.  Is A's **Right** edge to the left of B's **Left** edge? (Gap on X)
-2.  Is A's **Left** edge to the right of B's **Right** edge? (Gap on X)
-3.  Is A's **Bottom** edge above B's **Top** edge? (Gap on Y)
-4.  Is A's **Top** edge below B's **Bottom** edge? (Gap on Y)
-
-If **ANY** of these are true, return `false`. Otherwise, return `true`.
-
-> **⚠️ Coordinate Note:** In computer graphics, `(0,0)` is the **Top-Left**.
->
->   * `y` increases as you go **DOWN**.
->   * `x` increases as you go **RIGHT**.
-
 -----
 
-## ☄️ Task 2: The Asteroids (Circle vs AABB)
+## Task 2: The Asteroids (Circle vs AABB)
 
 **Goal:** Implement `Student_CheckCollisionAsteroid`.
 When your ship hits an Asteroid, return `true` to trigger Game Over.
@@ -76,10 +49,6 @@ When your ship hits an Asteroid, return `true` to trigger Game Over.
           * `closestY = clamp(cy, rect.top, rect.bottom)`
     2.  Calculate the distance between the **Circle Center** and this **Closest Point**.
     3.  If `distance < radius`, you are colliding.
-
-**Math Helper:**
-To avoid slow square roots (`sqrt`), compare the squared values:
-$$(distX^2 + distY^2) < (radius^2)$$
 
 -----
 
