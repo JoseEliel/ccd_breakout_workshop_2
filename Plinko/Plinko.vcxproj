@@ -135,12 +135,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\collision.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\workshop.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\collision.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
